@@ -1,7 +1,0 @@
-sleep_time = 300
-
-[reporter]
-stdout = false
-url = "url"
-token = "token"
-verify_ssl = true
