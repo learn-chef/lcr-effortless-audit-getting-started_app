@@ -1,0 +1,19 @@
+{
+  "reporter": {
+      "automate" : {
+          "stdout" : "{{cfg.reporter.stdout}}",
+          "url" : "{{cfg.reporter.url}}",
+          "token" : "{{cfg.reporter.token}}",
+          "node_name" : "{{ sys.hostname }}",
+          "node_uuid" : "{{sys.member_id}}",
+          "verify_ssl" : {{cfg.reporter.verify_ssl}}
+      }
+  },
+  "compliance": {
+      "server" : "{{cfg.compliance.server}}",
+      "token" : "{{cfg.compliance.token}}",
+      "user" : "{{cfg.compliance.user}}",
+      "insecure" : {{cfg.compliance.insecure}},
+      "ent" : "{{cfg.compliance.ent}}"
+  }
+}

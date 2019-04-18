@@ -1,0 +1,21 @@
+# Use this file to templatize your application's native configuration files.
+# See the docs at https://www.habitat.sh/docs/create-packages-configure/.
+# You can safely delete this file if you don't need it.
+
+
+interval = 500
+profiles=["compliance://admin@example.com/linux-baseline", "compliance://admin@example.com/linux-patch-baseline"]
+
+[reporter]
+stdout = false
+url = "url"
+token = "token"
+verify_ssl = true
+
+[compliance]
+server = "server"
+token = "token"
+user = "admin"
+insecure = false
+ent = "default"
+

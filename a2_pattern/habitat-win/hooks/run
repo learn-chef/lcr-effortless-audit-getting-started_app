@@ -1,0 +1,7 @@
+$env:SSL_CERT_FILE = "{{pkgPathFor "core/cacerts"}}/ssl/cert.pem"
+$env:PATH = "{{pkgPathFor "stuartpreston/inspec"}}/bin;$env:PATH"
+
+while ($true) {
+  inspec exec {{#each cfg.profiles as |profile| ~}} {{profile}} {{/each ~}} --json-config {{pkg.svc_config_path}}/inspec.json --target-id {{sys.machine_id}}
+  sleep {{cfg.interval}}
+}

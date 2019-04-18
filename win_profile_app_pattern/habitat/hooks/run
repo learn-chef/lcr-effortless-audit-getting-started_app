@@ -1,0 +1,8 @@
+$env:PATH = "{{pkgPathFor "thelunaticscripter/inspec"}}/inspec/bin;$env:PATH"
+
+while ($true) {
+    inspec exec {{pkg.path}}/dist --json-config {{pkg.svc_config_path}}/inspec.json --no-distinct-exit --target-id {{sys.machine_id}}
+
+    echo "sleeping for {{cfg.sleep_time}} seconds"
+    Start-Sleep {{cfg.sleep_time}}
+}
