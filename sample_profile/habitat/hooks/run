@@ -14,7 +14,8 @@ while true; do
   if [ "{{cfg.chef_license.acceptance}}" == "accept" ]
   then
     echo "Executing ${PROFILE_IDENT}"
-    exec inspec exec ${PROFILE_PATH} --attrs ${WAIVERS} --json-config ${CONFIG} 2>&1 --chef-license=accept-no-persist | tee ${LOG_FILE}
+ #   exec inspec exec ${PROFILE_PATH} --attrs ${WAIVERS} --json-config ${CONFIG} 2>&1 --chef-license=accept-no-persist | tee ${LOG_FILE}
+    exec inspec exec ${PROFILE_PATH} --json-config ${CONFIG} 2>&1 --chef-license=accept-no-persist | tee ${LOG_FILE}
   else
     echo "You have not accepted the chef license."
     echo "  in order to run this package you must"
