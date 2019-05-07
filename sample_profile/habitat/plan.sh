@@ -1,6 +1,6 @@
 pkg_name=audit-baseline
 pkg_version=0.1.0
-pkg_origin=effortless
+pkg_origin=originname
 pkg_deps=(chef/inspec)
 pkg_build_deps=(chef/inspec core/jq-static)
 pkg_svc_user=root
