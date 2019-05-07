@@ -54,7 +54,8 @@ do_unpack() {
 do_build() {
   inspec archive "$PROFILE_CACHE_DIR" \
                  --overwrite \
-                 -o "$PROFILE_CACHE_DIR/$ARCHIVE_NAME"
+                 -o "$PROFILE_CACHE_DIR/$ARCHIVE_NAME" \
+                 --chef-license=accept-no-persist
 }
 
 do_install() {
@@ -83,3 +84,4 @@ _do_compliance_login() {
                           --token $token \
                           $automate_server
 }
+
