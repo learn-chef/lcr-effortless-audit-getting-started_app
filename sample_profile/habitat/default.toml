@@ -2,7 +2,7 @@ interval = 300
 report_to_stdout = true
 
 [chef_license]
-acceptance = "undefined"
+acceptance = "accept"
 
 # Uncomment and replace values to report to Automate.
 # This can also be applied at runtime via `hab config apply`
