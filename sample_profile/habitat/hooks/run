@@ -20,7 +20,7 @@ while true; do
     echo "  in order to run this package you must"
     echo "  set the chef_license config in your"
     echo "  default.toml"
-#    $exit_code=172
+    $exit_code=172
   fi
 
   exit_code=$?
