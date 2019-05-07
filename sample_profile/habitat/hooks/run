@@ -10,7 +10,17 @@ PROFILE_PATH="{{pkg.path}}/{{pkg.name}}-{{pkg.version}}.tar.gz"
 
 while true; do
   echo "Executing ${PROFILE_IDENT}"
-  exec inspec exec ${PROFILE_PATH} --json-config ${CONFIG} 2>&1 | tee ${LOG_FILE}
+  #exec inspec exec ${PROFILE_PATH} --json-config ${CONFIG} 2>&1 | tee ${LOG_FILE}
+  if ["{{cfg.chef_license}}" -eq "accept"] then
+    echo "Executing ${PROFILE_IDENT}"
+    exec inspec exec ${PROFILE_PATH} --attrs ${WAIVERS} --json-config ${CONFIG} 2>&1 --chef-license=accept-no-persist | tee ${LOG_FILE}
+  else
+    echo "You have not accepted the chef license."
+    echo "  in order to run this package you must"
+    echo "  set the chef_license config in your"
+    echo "  default.toml"
+    $exit_code=172
+  fi
 
   exit_code=$?
   if [ $exit_code -eq 1 ]; then
